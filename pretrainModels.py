@@ -121,7 +121,7 @@ class ECCVGenerator(BaseColor):
 
 def eccv16(pretrained=True):
 	model = ECCVGenerator()
-	model.load_state_dict(torch.load('./models/ECCV16.pth'))
+	model.load_state_dict(model_zoo.load_url('https://colorizers.s3.us-east-2.amazonaws.com/colorization_release_v2-9b330a0b.pth',map_location='cpu',check_hash=True))
 	return model
 
 class SIGGRAPHGenerator(BaseColor):
@@ -284,7 +284,7 @@ def siggraph17(pretrained=True):
     model = SIGGRAPHGenerator()
     if(pretrained):
         import torch.utils.model_zoo as model_zoo
-        model.load_state_dict(torch.load('./models/SIGGRAPH17.pth') )
+        model.load_state_dict('https://colorizers.s3.us-east-2.amazonaws.com/siggraph17-df00044c.pth',map_location='cpu',check_hash=True))
     return model
 
 def load_img(img_path):
