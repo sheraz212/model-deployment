@@ -28,7 +28,7 @@ def allowed_FILETYPE(filename):
  
 ALL_MODELS = ['ECCV16' , 'SIGGRAPH17' , 'PIXUMMODEL']
 
-@app.route('/predict', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     if request.method == 'POST':
         file = request.files['file']
